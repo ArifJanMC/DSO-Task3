@@ -6,6 +6,22 @@
     is_debian_family: "{{ ansible_os_family == 'Debian' }}"
     is_redhat_family: "{{ ansible_os_family == 'RedHat' }}"
 
+# ===== Очистка предыдущих конфигураций Docker (Debian) =====
+- name: Clean previous Docker repository configurations (Debian family)
+  ansible.builtin.shell: |
+    rm -f /etc/apt/sources.list.d/docker.list
+    rm -f /etc/apt/sources.list.d/docker*.list
+    rm -f /usr/share/keyrings/docker-archive-keyring.gpg
+    rm -f /etc/apt/keyrings/docker.gpg
+  ignore_errors: true
+  changed_when: false  # Не отмечать задачу как измененную
+  when: is_debian_family
+
+- name: Update apt cache after cleaning (Debian family)
+  ansible.builtin.apt:
+    update_cache: yes
+  when: is_debian_family
+
 # ===== Для систем на базе Debian (Ubuntu, Debian) =====
 - name: Install required dependencies (Debian family)
   ansible.builtin.apt:
@@ -29,7 +45,7 @@
 
 - name: Add Docker GPG key (Debian family)
   ansible.builtin.shell: |
-    curl -fsSL https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    curl -fsSL https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
     chmod a+r /etc/apt/keyrings/docker.gpg
   args:
     creates: /etc/apt/keyrings/docker.gpg
@@ -37,7 +53,7 @@
 
 - name: Add Docker repository (Debian family)
   ansible.builtin.shell: |
-    echo "deb [arch={{ ansible_architecture }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    echo "deb [arch={{ ansible_architecture }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable" > /etc/apt/sources.list.d/docker.list
   args:
     creates: /etc/apt/sources.list.d/docker.list
   when: is_debian_family
@@ -47,6 +63,7 @@
   ansible.builtin.apt:
     update_cache: yes
   when: is_debian_family and apt_docker_repo.changed
+  
 # ===== Для систем на базе RedHat (RHEL, CentOS, Fedora) =====
 - name: Check SELinux status (RedHat family)
   ansible.builtin.shell: getenforce || echo "Not installed"
