@@ -33,6 +33,8 @@
       - lsb-release
       - python3-pip
       - python3-venv  # Добавляем поддержку виртуальных окружений
+      - python3-dev  # Добавляем для сборки пакетов
+      - build-essential  # Добавляем для компиляции
     state: present
     update_cache: yes
   when: is_debian_family
@@ -86,6 +88,9 @@
       - lvm2
       - python3-pip
       - python3-venv  # Добавляем поддержку виртуальных окружений
+      - python3-devel  # Добавляем для сборки пакетов
+      - gcc  # Добавляем для компиляции
+      - make  # Добавляем для компиляции
     state: present
   when: is_redhat_family
 
@@ -108,6 +113,21 @@
     creates: /opt/docker-venv/bin/activate
   become: yes
 
+- name: Upgrade pip in virtual environment
+  ansible.builtin.pip:
+    name: pip
+    state: latest
+    virtualenv: /opt/docker-venv
+  become: yes
+
+- name: Install setuptools and wheel in virtual environment
+  ansible.builtin.pip:
+    name: 
+      - setuptools
+      - wheel
+    virtualenv: /opt/docker-venv
+  become: yes
+
 - name: Install Docker Python modules in virtual environment
   ansible.builtin.pip:
     name:
@@ -116,6 +136,8 @@
     virtualenv: /opt/docker-venv
     state: present
   become: yes
+  environment:
+    PYTHONWARNINGS: ignore:Legacy PyYAML:DeprecationWarning  # Suppress deprecation warnings
 
 # ===== Общие задачи для всех дистрибутивов =====
 - name: Install Docker packages
