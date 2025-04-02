@@ -6,6 +6,10 @@
   vars_files:
     - vars/main.yml  # Загружаем переменные из файла
   
+  # Добавляем путь к pip из виртуального окружения
+  environment:
+    PATH: "/opt/docker-venv/bin:{{ ansible_env.PATH }}"
+  
   roles:
     # Роль для установки Docker Engine
     - { role: docker, tags: ['docker'] }
