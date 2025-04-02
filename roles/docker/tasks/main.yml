@@ -1,56 +1,83 @@
 ---
-# Задачи для установки Docker Engine
+# Задачи для установки Docker Engine (универсальная версия)
 
-- name: Check if system is Ubuntu (uses AppArmor instead of SELinux)
-  ansible.builtin.command: cat /etc/os-release
-  register: os_release
-  changed_when: false  # Не отмечать задачу как измененную, т.к. это только проверка
+- name: Determine OS family
+  ansible.builtin.set_fact:
+    is_debian_family: "{{ ansible_os_family == 'Debian' }}"
+    is_redhat_family: "{{ ansible_os_family == 'RedHat' }}"
 
-- name: Fail if system is Ubuntu
-  ansible.builtin.fail:
-    msg: "This playbook is designed for SELinux systems, not Ubuntu with AppArmor"
-  when: "'Ubuntu' in os_release.stdout"  # Прерываем выполнение, если система Ubuntu
+# ===== Для систем на базе Debian (Ubuntu, Debian) =====
+- name: Install required dependencies (Debian family)
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+      - python3-pip
+    state: present
+    update_cache: yes
+  when: is_debian_family
 
-- name: Check SELinux status
+- name: Add Docker GPG key (Debian family)
+  ansible.builtin.apt_key:
+    url: https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg
+    state: present
+  when: is_debian_family
+
+- name: Add Docker repository (Debian family)
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution | lower }} {{ ansible_distribution_release }} stable"
+    state: present
+    update_cache: yes
+  when: is_debian_family
+
+# ===== Для систем на базе RedHat (RHEL, CentOS, Fedora) =====
+- name: Check SELinux status (RedHat family)
   ansible.builtin.shell: getenforce || echo "Not installed"
   register: selinux_status
-  changed_when: false  # Не отмечать задачу как измененную, т.к. это только проверка
-  failed_when: false  # Не считать ошибкой, если команда завершилась неуспешно
+  changed_when: false
+  failed_when: false
+  when: is_redhat_family
 
-- name: Ensure SELinux is not disabled
+- name: Log SELinux status (RedHat family)
   ansible.builtin.debug:
     msg: "SELinux status is: {{ selinux_status.stdout }}"
-  failed_when: "selinux_status.stdout == 'Disabled'"  # Проверяем, что SELinux не отключен
+  when: is_redhat_family
 
-- name: Install required packages
+- name: Install required packages (RedHat family)
   ansible.builtin.package:
-    name:  # Устанавливаем необходимые пакеты для работы с Docker
+    name:
       - yum-utils
       - device-mapper-persistent-data
       - lvm2
       - python3-pip
     state: present
+  when: is_redhat_family
 
 - name: Add Docker repository for RHEL/CentOS
   ansible.builtin.get_url:
     url: https://download.docker.com/linux/centos/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'  # Только для CentOS/RHEL
+  when: is_redhat_family and (ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat')
 
 - name: Add Docker repository for Fedora
   ansible.builtin.get_url:
     url: https://download.docker.com/linux/fedora/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
-  when: ansible_distribution == 'Fedora'  # Только для Fedora
+  when: is_redhat_family and ansible_distribution == 'Fedora'
 
+# ===== Общие задачи для всех дистрибутивов =====
 - name: Install Docker packages
   ansible.builtin.package:
-    name: "{{ docker_packages }}"  # Используем переменную со списком пакетов Docker
+    name: "{{ docker_packages }}"
     state: present
+    update_cache: "{{ is_debian_family }}"
 
 - name: Install python docker modules
   ansible.builtin.pip:
-    name:  # Устанавливаем Python-модули для работы с Docker
+    name:
       - docker
       - docker-compose
     state: present
@@ -59,7 +86,7 @@
   ansible.builtin.service:
     name: docker
     state: started
-    enabled: yes  # Запускаем Docker и настраиваем автозапуск
+    enabled: yes
 
 - name: Create docker group
   ansible.builtin.group:
@@ -68,7 +95,7 @@
 
 - name: Add current user to docker group
   ansible.builtin.user:
-    name: "{{ ansible_user_id }}"  # Добавляем текущего пользователя в группу docker
+    name: "{{ ansible_user_id }}"
     groups: docker
     append: yes
-  notify: Restart Docker  # Уведомляем handler для перезапуска Docker
+  notify: Restart Docker

@@ -1,14 +1,18 @@
 ---
 # Задачи для развертывания GitLab
+- name: Determine SSL directories
+  ansible.builtin.set_fact:
+    ssl_cert_dir: "{{ '/etc/ssl/certs' if ansible_os_family == 'Debian' else '/etc/pki/tls/certs' }}"
+    ssl_key_dir: "{{ '/etc/ssl/private' if ansible_os_family == 'Debian' else '/etc/pki/tls/private' }}"
 
 - name: Create SSL directories
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
     mode: '0755'
-  with_items:  # Создаем директории для SSL-сертификатов
-    - /etc/ssl/certs
-    - /etc/ssl/private
+  with_items:
+    - "{{ ssl_cert_dir }}"
+    - "{{ ssl_key_dir }}"
 
 - name: Generate self-signed SSL certificate for GitLab
   ansible.builtin.command: >

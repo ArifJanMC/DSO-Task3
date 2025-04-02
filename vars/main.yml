@@ -1,12 +1,12 @@
 ---
 # Переменные для всего playbook
 
-# Docker configuration
+# Определение пакетов Docker для разных систем
 docker_packages:
   - docker-ce
   - docker-ce-cli
   - containerd.io
-  - docker-compose-plugin
+  - "{{ 'docker-compose-plugin' if ansible_os_family == 'RedHat' else 'docker-compose' }}"
 
 # App configuration
 app_repo: "https://github.com/ArifJanMC/DSO-Task2.git"
@@ -21,8 +21,8 @@ app_secret_key: "secure_secret_key_for_production_123"  # В реальном о
 # NGINX configuration
 nginx_port_http: 80
 nginx_port_https: 443
-nginx_ssl_cert: "/etc/ssl/certs/nginx-selfsigned.crt"
-nginx_ssl_key: "/etc/ssl/private/nginx-selfsigned.key"
+nginx_ssl_cert: "{{ ssl_cert_dir }}/nginx-selfsigned.crt"
+nginx_ssl_key: "{{ ssl_key_dir }}/nginx-selfsigned.key"
 app_domain: "app.localhost"  # Доменное имя приложения
 
 # GitLab configuration
@@ -31,7 +31,7 @@ gitlab_port_http: 8080  # Порт HTTP для GitLab (во избежание �
 gitlab_port_https: 8443  # Порт HTTPS для GitLab (во избежание конфликта с приложением)
 gitlab_port_ssh: 2222  # Порт SSH для GitLab
 gitlab_home: /srv/gitlab
-gitlab_ssl_cert: "/etc/ssl/certs/gitlab-selfsigned.crt"
-gitlab_ssl_key: "/etc/ssl/private/gitlab-selfsigned.key"
+gitlab_ssl_cert: "{{ ssl_cert_dir }}/gitlab-selfsigned.crt"
+gitlab_ssl_key: "{{ ssl_key_dir }}/gitlab-selfsigned.key"
 gitlab_root_password: "secure_gitlab_root_password_123"  # В реальном окружении использовать vault
 gitlab_domain: "gitlab.localhost"  # Доменное имя GitLab
