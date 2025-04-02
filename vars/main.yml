@@ -1,0 +1,37 @@
+---
+# Переменные для всего playbook
+
+# Docker configuration
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin
+
+# App configuration
+app_repo: "https://github.com/ArifJanMC/DSO-Task2.git"
+app_repo_dir: "/opt/book-catalog"
+app_container_name: book-catalog
+app_port: 5000
+app_db_name: book_catalog_db
+app_db_user: book_user
+app_db_password: secure_password_123  # В реальном окружении использовать vault
+app_secret_key: "secure_secret_key_for_production_123"  # В реальном окружении использовать vault
+
+# NGINX configuration
+nginx_port_http: 80
+nginx_port_https: 443
+nginx_ssl_cert: "/etc/ssl/certs/nginx-selfsigned.crt"
+nginx_ssl_key: "/etc/ssl/private/nginx-selfsigned.key"
+app_domain: "app.localhost"  # Доменное имя приложения
+
+# GitLab configuration
+gitlab_container_name: gitlab
+gitlab_port_http: 8080  # Порт HTTP для GitLab (во избежание конфликта с приложением)
+gitlab_port_https: 8443  # Порт HTTPS для GitLab (во избежание конфликта с приложением)
+gitlab_port_ssh: 2222  # Порт SSH для GitLab
+gitlab_home: /srv/gitlab
+gitlab_ssl_cert: "/etc/ssl/certs/gitlab-selfsigned.crt"
+gitlab_ssl_key: "/etc/ssl/private/gitlab-selfsigned.key"
+gitlab_root_password: "secure_gitlab_root_password_123"  # В реальном окружении использовать vault
+gitlab_domain: "gitlab.localhost"  # Доменное имя GitLab

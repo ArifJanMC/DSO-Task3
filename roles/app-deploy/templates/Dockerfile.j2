@@ -1,0 +1,36 @@
+# Базовый образ Python 3.9
+FROM python:3.9-slim
+
+# Устанавливаем рабочую директорию в контейнере
+WORKDIR /app
+
+# Копируем файлы зависимостей
+COPY requirements.txt .
+
+# Устанавливаем зависимости
+# --no-cache-dir - не сохраняем кэш pip для уменьшения размера образа
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Устанавливаем Gunicorn для запуска приложения в продакшене
+RUN pip install --no-cache-dir gunicorn
+
+# Копируем исходный код приложения
+COPY . .
+
+# Устанавливаем переменные окружения
+# FLASK_APP - основной скрипт запуска Flask приложения
+ENV FLASK_APP=run.py
+# FLASK_CONFIG - конфигурация приложения (development, testing, production)
+ENV FLASK_CONFIG=production
+# SECRET_KEY - ключ для защиты веб-сессий и других чувствительных данных
+ENV SECRET_KEY={{ app_secret_key }}
+# POSTGRES_URI - строка подключения к базе данных PostgreSQL
+ENV POSTGRES_URI=postgresql://{{ app_db_user }}:{{ app_db_password }}@db/{{ app_db_name }}
+
+# Открываем порт, который будет использовать приложение
+EXPOSE {{ app_port }}
+
+# Запускаем приложение через Gunicorn
+# --bind - указываем адрес и порт
+# run:app - указываем модуль и объект Flask приложения
+CMD ["gunicorn", "--bind", "0.0.0.0:{{ app_port }}", "run:app"]

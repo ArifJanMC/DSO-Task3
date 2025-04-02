@@ -1,0 +1,43 @@
+---
+# Задачи для развертывания GitLab
+
+- name: Create SSL directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items:  # Создаем директории для SSL-сертификатов
+    - /etc/ssl/certs
+    - /etc/ssl/private
+
+- name: Generate self-signed SSL certificate for GitLab
+  ansible.builtin.command: >
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048
+    -keyout {{ gitlab_ssl_key }}
+    -out {{ gitlab_ssl_cert }}
+    -subj "/C=US/ST=State/L=City/O=Organization/CN={{ gitlab_domain }}"
+  args:
+    creates: "{{ gitlab_ssl_cert }}"  # Выполняем только если сертификат еще не существует
+
+- name: Create GitLab directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items:
+    - "{{ gitlab_home }}"
+    - "{{ gitlab_home }}/config"
+    - "{{ gitlab_home }}/logs"
+    - "{{ gitlab_home }}/data"
+
+- name: Create docker-compose.yml for GitLab from template
+  ansible.builtin.template:
+    src: docker-compose-gitlab.yml.j2
+    dest: "{{ gitlab_home }}/docker-compose.yml"
+    mode: '0644'
+
+- name: Start GitLab with docker-compose
+  ansible.builtin.command: docker-compose up -d
+  args:
+    chdir: "{{ gitlab_home }}"  # Запускаем docker-compose в директории GitLab
+  notify: Verify GitLab is running  # Проверяем, что GitLab запущен

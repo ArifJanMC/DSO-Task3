@@ -1,0 +1,39 @@
+server {
+    # Слушаем на 80 порту для HTTP
+    listen 80;
+    server_name {{ app_domain }} localhost;
+    
+    # Перенаправляем все HTTP запросы на HTTPS
+    return 301 https://$host$request_uri;
+}
+
+server {
+    # Слушаем на 443 порту для HTTPS
+    listen 443 ssl;
+    server_name {{ app_domain }} localhost;
+
+    # Настройка SSL сертификатов
+    ssl_certificate {{ nginx_ssl_cert }};
+    ssl_certificate_key {{ nginx_ssl_key }};
+    
+    # Оптимизация SSL
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers on;
+    ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_tickets off;
+    
+    # Настройка прокси-сервера для перенаправления запросов к приложению
+    location / {
+        proxy_pass http://app:{{ app_port }}; # Перенаправляем запросы на сервис app
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Таймауты для запросов
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+}

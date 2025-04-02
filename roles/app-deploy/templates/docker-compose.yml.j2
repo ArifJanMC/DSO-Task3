@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  # Сервис веб-приложения Book Catalog
+  app:
+    build:
+      context: .  # Используем текущую директорию как контекст сборки
+      dockerfile: Dockerfile  # Путь к Dockerfile
+    container_name: {{ app_container_name }}  # Имя контейнера
+    restart: always  # Политика перезапуска: всегда перезапускать при остановке
+    depends_on:
+      - db  # Зависимость от сервиса БД
+    networks:
+      - app-network  # Сеть для взаимодействия сервисов
+    environment:  # Переменные окружения
+      - FLASK_APP=run.py
+      - FLASK_CONFIG=production
+      - SECRET_KEY={{ app_secret_key }}
+      - POSTGRES_URI=postgresql://{{ app_db_user }}:{{ app_db_password }}@db/{{ app_db_name }}
+    volumes:
+      - .:/app  # Монтируем текущую директорию в /app контейнера
+
+  # Сервис базы данных PostgreSQL
+  db:
+    image: postgres:13  # Используем официальный образ PostgreSQL
+    container_name: {{ app_container_name }}-db  # Имя контейнера
+    restart: always  # Политика перезапуска: всегда перезапускать при остановке
+    environment:  # Переменные окружения для настройки PostgreSQL
+      POSTGRES_DB: {{ app_db_name }}
+      POSTGRES_USER: {{ app_db_user }}
+      POSTGRES_PASSWORD: {{ app_db_password }}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Хранение данных в именованном томе
+    networks:
+      - app-network  # Сеть для взаимодействия сервисов
+
+  # Сервис NGINX для проксирования и SSL
+  nginx:
+    image: nginx:latest  # Используем официальный образ NGINX
+    container_name: {{ app_container_name }}-nginx  # Имя контейнера
+    restart: always  # Политика перезапуска: всегда перезапускать при остановке
+    ports:  # Проброс портов
+      - "{{ nginx_port_http }}:80"
+      - "{{ nginx_port_https }}:443"
+    volumes:  # Монтируем необходимые файлы
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf  # Конфигурация NGINX
+      - {{ nginx_ssl_cert }}:{{ nginx_ssl_cert }}  # SSL сертификат
+      - {{ nginx_ssl_key }}:{{ nginx_ssl_key }}  # SSL ключ
+    depends_on:
+      - app  # Зависимость от сервиса приложения
+    networks:
+      - app-network  # Сеть для взаимодействия сервисов
+
+# Определение сетей для изоляции сервисов
+networks:
+  app-network:
+    driver: bridge  # Используем драйвер bridge для сети
+
+# Определение томов для хранения данных
+volumes:
+  postgres_data:  # Именованный том для данных PostgreSQL

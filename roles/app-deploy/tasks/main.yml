@@ -1,0 +1,65 @@
+---
+# Задачи для развертывания приложения Book Catalog
+
+- name: Create SSL directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items:  # Создаем директории для SSL-сертификатов
+    - /etc/ssl/certs
+    - /etc/ssl/private
+
+- name: Generate self-signed SSL certificate for NGINX
+  ansible.builtin.command: >
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048
+    -keyout {{ nginx_ssl_key }}
+    -out {{ nginx_ssl_cert }}
+    -subj "/C=US/ST=State/L=City/O=Organization/CN={{ app_domain }}"
+  args:
+    creates: "{{ nginx_ssl_cert }}"  # Выполняем только если сертификат еще не существует
+
+- name: Create application directory
+  ansible.builtin.file:
+    path: "{{ app_repo_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Clone application repository
+  ansible.builtin.git:
+    repo: "{{ app_repo }}"
+    dest: "{{ app_repo_dir }}"
+    clone: yes
+    update: yes  # Обновляем репозиторий, если он уже существует
+
+- name: Create Dockerfile from template
+  ansible.builtin.template:
+    src: Dockerfile.j2
+    dest: "{{ app_repo_dir }}/Dockerfile"
+    mode: '0644'
+
+- name: Create docker-compose.yml from template
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: "{{ app_repo_dir }}/docker-compose.yml"
+    mode: '0644'
+
+- name: Create NGINX configuration
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: "{{ app_repo_dir }}/nginx.conf"
+    mode: '0644'
+
+- name: Create .env file
+  ansible.builtin.template:
+    src: .env.j2
+    dest: "{{ app_repo_dir }}/.env"
+    mode: '0644'
+
+- name: Build and start application with docker-compose
+  ansible.builtin.command: docker-compose up -d --build
+  args:
+    chdir: "{{ app_repo_dir }}"  # Запускаем docker-compose в директории приложения
+  notify: 
+    - Verify application is running  # Проверяем, что приложение запущено
+    - Test application API  # Тестируем API приложения

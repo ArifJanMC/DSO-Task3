@@ -1,0 +1,17 @@
+---
+# Основной playbook для установки Docker и развертывания приложений
+- name: Install Docker and Deploy Applications
+  hosts: all
+  become: true  # Выполняем от имени суперпользователя
+  vars_files:
+    - vars/main.yml  # Загружаем переменные из файла
+  
+  roles:
+    # Роль для установки Docker Engine
+    - { role: docker, tags: ['docker'] }
+    
+    # Роль для развертывания приложения Book Catalog
+    - { role: app-deploy, tags: ['app'] }
+    
+    # Роль для развертывания GitLab
+    - { role: gitlab-deploy, tags: ['gitlab'] }

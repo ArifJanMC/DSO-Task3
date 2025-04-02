@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  # Сервис GitLab Community Edition
+  gitlab:
+    image: gitlab/gitlab-ce:latest  # Используем официальный образ GitLab CE
+    container_name: {{ gitlab_container_name }}  # Имя контейнера
+    restart: always  # Политика перезапуска: всегда перезапускать при остановке
+    hostname: {{ gitlab_domain }}  # Hostname для GitLab
+    ports:  # Проброс портов
+      - "{{ gitlab_port_http }}:80"  # HTTP порт
+      - "{{ gitlab_port_https }}:443"  # HTTPS порт
+      - "{{ gitlab_port_ssh }}:22"  # SSH порт для Git
+    volumes:  # Монтируем необходимые директории и файлы
+      - {{ gitlab_home }}/config:/etc/gitlab  # Конфигурация GitLab
+      - {{ gitlab_home }}/logs:/var/log/gitlab  # Логи GitLab
+      - {{ gitlab_home }}/data:/var/opt/gitlab  # Данные GitLab
+      - {{ gitlab_ssl_cert }}:{{ gitlab_ssl_cert }}  # SSL сертификат
+      - {{ gitlab_ssl_key }}:{{ gitlab_ssl_key }}  # SSL ключ
+    environment:
+      # Конфигурация GitLab через OMNIBUS_CONFIG
+      GITLAB_OMNIBUS_CONFIG: |
+        # Внешний URL для доступа к GitLab
+        external_url 'https://{{ gitlab_domain }}'
+        
+        # Настройка NGINX
+        nginx['ssl_certificate'] = "{{ gitlab_ssl_cert }}"
+        nginx['ssl_certificate_key'] = "{{ gitlab_ssl_key }}"
+        
+        # Настройка SSH-порта
+        gitlab_rails['gitlab_shell_ssh_port'] = {{ gitlab_port_ssh }}
+        
+        # Установка начального пароля для пользователя root
+        gitlab_rails['initial_root_password'] = "{{ gitlab_root_password }}"
+        
+        # Отключение автоматического создания Let's Encrypt сертификатов
+        letsencrypt['enable'] = false
+    shm_size: '256m'  # Размер shared memory для контейнера
+    
+    # Настройка ресурсов для контейнера GitLab
+    # GitLab требует значительных ресурсов для нормальной работы
+    deploy:
+      resources:
+        limits:
+          memory: 6G  # Ограничение по памяти
+        reservations:
+          memory: 4G  # Резервирование памяти

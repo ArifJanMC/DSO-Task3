@@ -1,0 +1,14 @@
+---
+# Handlers для роли gitlab-deploy
+
+- name: Verify GitLab is running
+  ansible.builtin.uri:
+    url: "https://localhost:{{ gitlab_port_https }}"
+    method: GET
+    validate_certs: no  # Не проверяем SSL сертификат, т.к. он самоподписанный
+    status_code: 200  # Ожидаем HTTP код 200
+  register: gitlab_check
+  retries: 30  # Повторяем проверку 30 раз
+  delay: 30  # С интервалом 30 секунд (GitLab запускается долго)
+  until: gitlab_check.status == 200
+  failed_when: gitlab_check.status != 200  # Проверка считается неудачной, если код != 200

@@ -1,0 +1,74 @@
+---
+# Задачи для установки Docker Engine
+
+- name: Check if system is Ubuntu (uses AppArmor instead of SELinux)
+  ansible.builtin.command: cat /etc/os-release
+  register: os_release
+  changed_when: false  # Не отмечать задачу как измененную, т.к. это только проверка
+
+- name: Fail if system is Ubuntu
+  ansible.builtin.fail:
+    msg: "This playbook is designed for SELinux systems, not Ubuntu with AppArmor"
+  when: "'Ubuntu' in os_release.stdout"  # Прерываем выполнение, если система Ubuntu
+
+- name: Check SELinux status
+  ansible.builtin.shell: getenforce || echo "Not installed"
+  register: selinux_status
+  changed_when: false  # Не отмечать задачу как измененную, т.к. это только проверка
+  failed_when: false  # Не считать ошибкой, если команда завершилась неуспешно
+
+- name: Ensure SELinux is not disabled
+  ansible.builtin.debug:
+    msg: "SELinux status is: {{ selinux_status.stdout }}"
+  failed_when: "selinux_status.stdout == 'Disabled'"  # Проверяем, что SELinux не отключен
+
+- name: Install required packages
+  ansible.builtin.package:
+    name:  # Устанавливаем необходимые пакеты для работы с Docker
+      - yum-utils
+      - device-mapper-persistent-data
+      - lvm2
+      - python3-pip
+    state: present
+
+- name: Add Docker repository for RHEL/CentOS
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'RedHat'  # Только для CentOS/RHEL
+
+- name: Add Docker repository for Fedora
+  ansible.builtin.get_url:
+    url: https://download.docker.com/linux/fedora/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+  when: ansible_distribution == 'Fedora'  # Только для Fedora
+
+- name: Install Docker packages
+  ansible.builtin.package:
+    name: "{{ docker_packages }}"  # Используем переменную со списком пакетов Docker
+    state: present
+
+- name: Install python docker modules
+  ansible.builtin.pip:
+    name:  # Устанавливаем Python-модули для работы с Docker
+      - docker
+      - docker-compose
+    state: present
+
+- name: Start and enable Docker service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: yes  # Запускаем Docker и настраиваем автозапуск
+
+- name: Create docker group
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: Add current user to docker group
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"  # Добавляем текущего пользователя в группу docker
+    groups: docker
+    append: yes
+  notify: Restart Docker  # Уведомляем handler для перезапуска Docker
