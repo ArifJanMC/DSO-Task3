@@ -1,0 +1,20 @@
+2025-04-27_09:33:32.07975 {"timestamp":"2025-04-27T09:33:32.015Z","pid":332,"message":"Puma starting in cluster mode..."}
+2025-04-27_09:33:32.08165 {"timestamp":"2025-04-27T09:33:32.081Z","pid":332,"message":"* Puma version: 6.5.0 (\"Sky's Version\")"}
+2025-04-27_09:33:32.08572 {"timestamp":"2025-04-27T09:33:32.085Z","pid":332,"message":"* Ruby version: ruby 3.2.5 (2024-07-26 revision 31d0f1a2e7) [x86_64-linux]"}
+2025-04-27_09:33:32.08583 {"timestamp":"2025-04-27T09:33:32.085Z","pid":332,"message":"*  Min threads: 4"}
+2025-04-27_09:33:32.09014 {"timestamp":"2025-04-27T09:33:32.089Z","pid":332,"message":"*  Max threads: 4"}
+2025-04-27_09:33:32.09025 {"timestamp":"2025-04-27T09:33:32.090Z","pid":332,"message":"*  Environment: production"}
+2025-04-27_09:33:32.09339 {"timestamp":"2025-04-27T09:33:32.093Z","pid":332,"message":"*   Master PID: 332"}
+2025-04-27_09:33:32.09354 {"timestamp":"2025-04-27T09:33:32.093Z","pid":332,"message":"*      Workers: 2"}
+2025-04-27_09:33:32.09368 {"timestamp":"2025-04-27T09:33:32.093Z","pid":332,"message":"*     Restarts: (✔) hot (✖) phased"}
+2025-04-27_09:33:32.09380 {"timestamp":"2025-04-27T09:33:32.093Z","pid":332,"message":"* Preloading application"}
+2025-04-27_09:53:01.82500 {"timestamp":"2025-04-27T09:53:01.772Z","pid":606,"message":"Puma starting in cluster mode..."}
+2025-04-27_09:53:01.82710 {"timestamp":"2025-04-27T09:53:01.826Z","pid":606,"message":"* Puma version: 6.5.0 (\"Sky's Version\")"}
+2025-04-27_09:53:01.82811 {"timestamp":"2025-04-27T09:53:01.827Z","pid":606,"message":"* Ruby version: ruby 3.2.5 (2024-07-26 revision 31d0f1a2e7) [x86_64-linux]"}
+2025-04-27_09:53:01.82854 {"timestamp":"2025-04-27T09:53:01.828Z","pid":606,"message":"*  Min threads: 4"}
+2025-04-27_09:53:01.82960 {"timestamp":"2025-04-27T09:53:01.829Z","pid":606,"message":"*  Max threads: 4"}
+2025-04-27_09:53:01.83001 {"timestamp":"2025-04-27T09:53:01.829Z","pid":606,"message":"*  Environment: production"}
+2025-04-27_09:53:01.83046 {"timestamp":"2025-04-27T09:53:01.830Z","pid":606,"message":"*   Master PID: 606"}
+2025-04-27_09:53:01.83087 {"timestamp":"2025-04-27T09:53:01.830Z","pid":606,"message":"*      Workers: 2"}
+2025-04-27_09:53:01.83383 {"timestamp":"2025-04-27T09:53:01.833Z","pid":606,"message":"*     Restarts: (✔) hot (✖) phased"}
+2025-04-27_09:53:01.83451 {"timestamp":"2025-04-27T09:53:01.834Z","pid":606,"message":"* Preloading application"}

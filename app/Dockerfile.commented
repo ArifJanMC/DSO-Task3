@@ -1,0 +1,51 @@
+# Base image: Python 3.8 slim image (smaller size than standard)
+FROM python:3.8-slim
+
+# Set working directory for the application
+WORKDIR /app
+
+# Environment variables:
+# - PYTHONDONTWRITEBYTECODE: Prevents Python from writing .pyc files
+# - PYTHONUNBUFFERED: Ensures Python output is sent straight to terminal (no buffering)
+# - FLASK_APP: The entry point to our application
+# - FLASK_CONFIG: The configuration to use
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    FLASK_APP=run.py \
+    FLASK_CONFIG=production
+
+# Install system dependencies:
+# - gcc: Required for building some Python packages
+# - default-libmysqlclient-dev: Required for MySQL connection
+# - postgresql-client: Required for PostgreSQL connection
+# Then clean up to reduce image size
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    default-libmysqlclient-dev \
+    postgresql-client \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements file separately to leverage Docker cache
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application code
+COPY app/ ./app/
+COPY run.py .
+
+# Create non-root user for security
+# Then change ownership of all files to this user
+RUN useradd -m appuser
+RUN chown -R appuser:appuser /app
+USER appuser
+
+# Expose port 5000 for the Flask application
+EXPOSE 5000
+
+# Command to run the application with Gunicorn WSGI server
+# - bind to 0.0.0.0 to listen on all interfaces
+# - run:app points to the Flask application instance in run.py
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "run:app"]

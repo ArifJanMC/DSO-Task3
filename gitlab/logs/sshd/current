@@ -1,0 +1,5 @@
+2025-04-27_09:32:51.67056 Server listening on 0.0.0.0 port 22.
+2025-04-27_09:32:51.67067 Server listening on :: port 22.
+2025-04-27_09:38:49.14924 kex_exchange_identification: Connection closed by remote host
+2025-04-27_09:38:49.14954 Connection closed by 185.247.137.38 port 60547
+2025-04-27_09:38:49.38780 Connection closed by 185.247.137.38 port 49781 [preauth]

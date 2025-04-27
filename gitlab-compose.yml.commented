@@ -1,0 +1,47 @@
+# Docker Compose file format version
+version: '3.8'
+
+services:
+  # GitLab Community Edition service configuration
+  gitlab:
+    # Official GitLab CE image, latest version
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    # Always restart container if it stops
+    restart: always
+    # Set GitLab hostname for URLs and repository paths
+    hostname: 'gitlab.dot.arifjan.su'
+    # GitLab configuration using Omnibus
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        # Set the external URL for GitLab
+        external_url 'https://gitlab.dot.arifjan.su'
+        # Configure SSH port to avoid conflict with host SSH
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
+        # SSL certificate configuration
+        nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
+        nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
+        # Redirect HTTP requests to HTTPS for security
+        nginx['redirect_http_to_https'] = true
+    # Expose ports to the host machine
+    ports:
+      - '80:80'     # HTTP port (will redirect to HTTPS)
+      - '443:443'   # HTTPS port
+      - '2222:22'   # SSH port for git operations
+    # Persistent volumes for GitLab data
+    volumes:
+      - './gitlab/config:/etc/gitlab'        # GitLab configuration
+      - './gitlab/logs:/var/log/gitlab'      # GitLab logs
+      - './gitlab/data:/var/opt/gitlab'      # GitLab data
+      - './certs:/etc/gitlab/ssl:ro'         # SSL certificates (read-only)
+    # Set shared memory size to avoid issues with CI/CD
+    shm_size: '256m'
+    # Connect to the gitlab_net network
+    networks:
+      - gitlab_net
+
+# Networks configuration
+networks:
+  # Define the gitlab_net network with bridge driver
+  gitlab_net:
+    driver: bridge

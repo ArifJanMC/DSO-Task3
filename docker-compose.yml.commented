@@ -1,0 +1,74 @@
+# Docker Compose file format version
+version: '3.8'
+
+services:
+  # PostgreSQL database service configuration
+  postgres:
+    # Official PostgreSQL image, version 13
+    image: postgres:13
+    container_name: book_catalog_postgres
+    # Always restart container if it stops
+    restart: always
+    # Environment variables for PostgreSQL initialization
+    environment:
+      - POSTGRES_USER=bookuser
+      - POSTGRES_PASSWORD=bookpassword
+      - POSTGRES_DB=book_catalog
+    # Persistent volume for PostgreSQL data
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    # Connect to the book_net network
+    networks:
+      - book_net
+
+  # Flask application service configuration
+  app:
+    # Build using Dockerfile in the ./app directory
+    build: 
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: book_catalog_app
+    # Always restart container if it stops
+    restart: always
+    # Wait for postgres to be ready before starting
+    depends_on:
+      - postgres
+    # Environment variables for Flask application
+    environment:
+      - FLASK_CONFIG=production
+      - SECRET_KEY=your_production_secret_key
+      - POSTGRES_URI=postgresql://bookuser:bookpassword@postgres/book_catalog
+    # Mount app directory for development (hot reloading)
+    volumes:
+      - ./app:/app/app
+    # Connect to the book_net network
+    networks:
+      - book_net
+
+  # Nginx service configuration for reverse proxy
+  nginx:
+    # Official Nginx image, latest version
+    image: nginx:latest
+    container_name: book_catalog_nginx
+    # Always restart container if it stops
+    restart: always
+    # Wait for app to be ready before starting
+    depends_on:
+      - app
+    # Expose ports to the host machine
+    ports:
+      - "80:80"    # HTTP port
+      - "443:443"  # HTTPS port
+    # Mount Nginx configuration and SSL certificates
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    # Connect to the book_net network
+    networks:
+      - book_net
+
+# Networks configuration
+networks:
+  # Define the book_net network with bridge driver
+  book_net:
+    driver: bridge

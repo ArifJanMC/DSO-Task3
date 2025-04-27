@@ -1,0 +1,81 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: book_catalog_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "bookuser"
+      POSTGRES_PASSWORD: "bookpassword"
+      POSTGRES_DB: "book_catalog"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - app_net
+
+  app:
+    build: 
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: book_catalog_app
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      FLASK_CONFIG: "development"
+      SECRET_KEY: "your_production_secret_key"
+      SQLALCHEMY_DATABASE_URI: "sqlite:///:memory:"
+      POSTGRES_URI: ""
+      MYSQL_URI: ""
+    volumes:
+      - ./app:/app/app
+      - ./.env:/app/.env
+    networks:
+      - app_net
+
+  nginx:
+    image: nginx:latest
+    container_name: book_catalog_nginx
+    restart: always
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    networks:
+      - app_net
+      - gitlab_net
+
+  # GitLab service
+  gitlab:
+    image: 'gitlab/gitlab-ce:latest'
+    container_name: gitlab
+    restart: always
+    hostname: 'gitlab.dot.arifjan.su'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://gitlab.dot.arifjan.su'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2223
+        nginx['ssl_certificate'] = "/etc/gitlab/ssl/fullchain.pem"
+        nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/privkey.pem"
+        nginx['redirect_http_to_https'] = true
+    ports:
+      - '8080:80'  # Changed to avoid conflict with nginx
+      - '8443:443' # Changed to avoid conflict with nginx
+      - '2223:22'  # Changed SSH port
+    volumes:
+      - './gitlab/config:/etc/gitlab'
+      - './gitlab/logs:/var/log/gitlab'
+      - './gitlab/data:/var/opt/gitlab'
+      - './certs:/etc/gitlab/ssl:ro'
+    shm_size: '256m'
+    networks:
+      - gitlab_net
+
+networks:
+  app_net:
+    driver: bridge
+  gitlab_net:
+    driver: bridge

@@ -1,0 +1,149 @@
+2025-04-27_09:33:14.29852 LOG:  starting PostgreSQL 16.8 on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, 64-bit
+2025-04-27_09:33:14.30878 LOG:  listening on Unix socket "/var/opt/gitlab/postgresql/.s.PGSQL.5432"
+2025-04-27_09:33:14.36307 LOG:  database system was interrupted; last known up at 2025-04-27 08:39:20 GMT
+2025-04-27_09:33:17.18373 LOG:  database system was not properly shut down; automatic recovery in progress
+2025-04-27_09:33:17.22751 LOG:  invalid record length at 0/85861A0: expected at least 24, got 0
+2025-04-27_09:33:17.22754 LOG:  redo is not required
+2025-04-27_09:33:17.31434 LOG:  database system is ready to accept connections
+2025-04-27_09:33:32.26732 LOG:  duration: 2885.249 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_09:33:32.26734 	       relname as relname,
+2025-04-27_09:33:32.26734 	       pg_total_relation_size(oid) bytes
+2025-04-27_09:33:32.26734 	  FROM pg_class
+2025-04-27_09:33:32.26735 	 WHERE relkind = 'r';
+2025-04-27_09:33:32.26735 	
+2025-04-27_09:34:15.36930 LOG:  duration: 1187.217 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_09:34:15.36970 	       relname as relname,
+2025-04-27_09:34:15.36971 	       pg_total_relation_size(oid) bytes
+2025-04-27_09:34:15.36972 	  FROM pg_class
+2025-04-27_09:34:15.36972 	 WHERE relkind = 'r';
+2025-04-27_09:34:15.36972 	
+2025-04-27_09:34:30.55948 LOG:  duration: 1463.878 ms  statement: SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+2025-04-27_09:34:30.56008 	       pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+2025-04-27_09:34:30.56008 	       c.collname, col_description(a.attrelid, a.attnum) AS comment,
+2025-04-27_09:34:30.56009 	       attgenerated as attgenerated
+2025-04-27_09:34:30.56009 	  FROM pg_attribute a
+2025-04-27_09:34:30.56009 	  LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+2025-04-27_09:34:30.56010 	  LEFT JOIN pg_type t ON a.atttypid = t.oid
+2025-04-27_09:34:30.56010 	  LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+2025-04-27_09:34:30.56010 	 WHERE a.attrelid = '"application_settings"'::regclass
+2025-04-27_09:34:30.56010 	   AND a.attnum > 0 AND NOT a.attisdropped
+2025-04-27_09:34:30.56011 	 ORDER BY a.attnum
+2025-04-27_09:34:30.56011 	
+2025-04-27_09:38:44.22811 LOG:  duration: 1215.443 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_09:38:44.23042 	       relname as relname,
+2025-04-27_09:38:44.23044 	       pg_total_relation_size(oid) bytes
+2025-04-27_09:38:44.23044 	  FROM pg_class
+2025-04-27_09:38:44.23044 	 WHERE relkind = 'r';
+2025-04-27_09:38:44.23044 	
+2025-04-27_09:39:48.70404 LOG:  duration: 1334.448 ms  statement: SELECT
+2025-04-27_09:39:48.71253 	  COUNT(*) AS count
+2025-04-27_09:39:48.71257 	FROM p_ci_builds
+2025-04-27_09:39:48.71259 	JOIN projects
+2025-04-27_09:39:48.71260 	  ON projects.id = p_ci_builds.project_id
+2025-04-27_09:39:48.71260 	WHERE p_ci_builds.type = 'Ci::Build'
+2025-04-27_09:39:48.71260 	  AND p_ci_builds.status = 'running'
+2025-04-27_09:39:48.71261 	  AND p_ci_builds.updated_at < NOW() - INTERVAL '1 hour'
+2025-04-27_09:39:48.71261 	  AND projects.pending_delete = 'f'
+2025-04-27_09:39:48.71261 	
+2025-04-27_09:39:54.11872 LOG:  duration: 2616.860 ms  statement:           SELECT relname,seq_tup_read,idx_tup_fetch,n_tup_ins,n_tup_upd,n_tup_del,n_tup_hot_upd,n_dead_tup,seq_scan
+2025-04-27_09:39:54.11978 	          FROM pg_stat_user_tables
+2025-04-27_09:39:54.11979 	          WHERE relname IN (SELECT tablename FROM pg_tables WHERE tableowner = 'gitlab')
+2025-04-27_09:39:54.11979 	          GROUP BY relname,seq_tup_read,idx_tup_fetch,n_tup_ins,n_tup_upd,n_tup_del,n_tup_hot_upd,n_dead_tup,seq_scan
+2025-04-27_09:39:54.11980 	
+2025-04-27_09:39:59.53513 LOG:  duration: 3699.047 ms  statement: SELECT version();
+2025-04-27_09:40:02.81546 LOG:  duration: 8269.005 ms  statement: SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name='plans')
+2025-04-27_09:40:06.54296 LOG:  duration: 11571.764 ms  statement: SELECT name, setting, COALESCE(unit, ''), short_desc, vartype FROM pg_settings WHERE vartype IN ('bool', 'integer', 'real') AND name != 'sync_commit_cancel_wait';
+2025-04-27_09:40:06.67706 LOG:  duration: 3641.676 ms  statement: SELECT COUNT(*) FROM projects INNER JOIN project_mirror_data ON project_mirror_data.project_id = projects.id
+2025-04-27_09:40:06.67823 	 WHERE projects.mirror = true
+2025-04-27_09:40:06.67824 	AND projects.archived = false
+2025-04-27_09:40:06.67826 	AND project_mirror_data.retry_count <= 14
+2025-04-27_09:40:06.67828 	AND project_mirror_data.next_execution_timestamp > '2020-03-28'
+2025-04-27_09:40:06.67829 	
+2025-04-27_09:40:06.67829 	AND project_mirror_data.status NOT IN ('scheduled', 'started')
+2025-04-27_09:40:06.67830 	AND project_mirror_data.next_execution_timestamp <= NOW()
+2025-04-27_09:40:06.67830 	;
+2025-04-27_09:40:08.33293 LOG:  duration: 1533.005 ms  statement: SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name='plans')
+2025-04-27_09:40:08.33409 LOG:  duration: 1026.476 ms  statement: SELECT pg_database.datname FROM pg_database;
+2025-04-27_09:40:11.36265 LOG:  duration: 2953.260 ms  statement: SELECT COUNT(*) FROM projects INNER JOIN project_mirror_data ON project_mirror_data.project_id = projects.id
+2025-04-27_09:40:11.36875 	 WHERE projects.mirror = true
+2025-04-27_09:40:11.36875 	AND projects.archived = false
+2025-04-27_09:40:11.36876 	AND project_mirror_data.retry_count <= 14
+2025-04-27_09:40:11.36876 	AND project_mirror_data.next_execution_timestamp > '2020-03-28'
+2025-04-27_09:40:11.36876 	
+2025-04-27_09:40:11.36877 	AND project_mirror_data.status NOT IN ('scheduled', 'started')
+2025-04-27_09:40:11.36877 	AND (project_mirror_data.next_execution_timestamp - project_mirror_data.last_update_at) <= '30 minutes'::interval
+2025-04-27_09:40:11.36877 	AND project_mirror_data.last_update_at < NOW() - '30 minutes'::interval
+2025-04-27_09:40:11.36877 	;
+2025-04-27_09:40:20.57877 LOG:  duration: 9139.086 ms  statement: SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name='plans')
+2025-04-27_09:40:47.73288 LOG:  duration: 35971.041 ms  statement: 
+2025-04-27_09:40:47.73910 			SELECT
+2025-04-27_09:40:47.73911 				datid
+2025-04-27_09:40:47.73912 				,datname
+2025-04-27_09:40:47.73912 				,numbackends
+2025-04-27_09:40:47.73912 				,xact_commit
+2025-04-27_09:40:47.73912 				,xact_rollback
+2025-04-27_09:40:47.73913 				,blks_read
+2025-04-27_09:40:47.73913 				,blks_hit
+2025-04-27_09:40:47.73913 				,tup_returned
+2025-04-27_09:40:47.73913 				,tup_fetched
+2025-04-27_09:40:47.73914 				,tup_inserted
+2025-04-27_09:40:47.73914 				,tup_updated
+2025-04-27_09:40:47.73914 				,tup_deleted
+2025-04-27_09:40:47.73928 				,conflicts
+2025-04-27_09:40:47.73929 				,temp_files
+2025-04-27_09:40:47.73929 				,temp_bytes
+2025-04-27_09:40:47.73929 				,deadlocks
+2025-04-27_09:40:47.73930 				,blk_read_time
+2025-04-27_09:40:47.73930 				,blk_write_time
+2025-04-27_09:40:47.73930 				,stats_reset
+2025-04-27_09:40:47.73930 			FROM pg_stat_database;
+2025-04-27_09:40:47.73931 		
+2025-04-27_09:41:26.86427 ERROR:  canceling statement due to statement timeout
+2025-04-27_09:41:26.86511 STATEMENT:  SELECT COUNT(*) FROM projects INNER JOIN project_mirror_data ON project_mirror_data.project_id = projects.id
+2025-04-27_09:41:26.86512 	 WHERE projects.mirror = true
+2025-04-27_09:41:26.86513 	AND projects.archived = false
+2025-04-27_09:41:26.86513 	AND project_mirror_data.retry_count <= 14
+2025-04-27_09:41:26.86513 	AND project_mirror_data.next_execution_timestamp > '2020-03-28'
+2025-04-27_09:41:26.86513 	
+2025-04-27_09:41:26.86514 	AND project_mirror_data.status NOT IN ('scheduled', 'started')
+2025-04-27_09:41:26.86514 	AND project_mirror_data.last_update_at >= NOW() - '30 seconds'::interval
+2025-04-27_09:41:26.86514 	;
+2025-04-27_09:52:51.47678 LOG:  duration: 1143.254 ms  statement: SELECT
+2025-04-27_09:52:51.47717 			current_database() datname,
+2025-04-27_09:52:51.47720 			schemaname,
+2025-04-27_09:52:51.47720 			relname,
+2025-04-27_09:52:51.47721 			heap_blks_read,
+2025-04-27_09:52:51.47721 			heap_blks_hit,
+2025-04-27_09:52:51.47723 			idx_blks_read,
+2025-04-27_09:52:51.47724 			idx_blks_hit,
+2025-04-27_09:52:51.47724 			toast_blks_read,
+2025-04-27_09:52:51.47724 			toast_blks_hit,
+2025-04-27_09:52:51.47725 			tidx_blks_read,
+2025-04-27_09:52:51.47725 			tidx_blks_hit
+2025-04-27_09:52:51.47726 		FROM pg_statio_user_tables
+2025-04-27_09:52:53.38659 LOG:  duration: 1339.580 ms  execute <unnamed>: SELECT pg_database_size($1)
+2025-04-27_09:52:53.38662 DETAIL:  parameters: $1 = 'gitlabhq_production'
+2025-04-27_09:52:54.25862 LOG:  duration: 4038.156 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_09:52:54.25865 	       relname as relname,
+2025-04-27_09:52:54.25865 	       pg_total_relation_size(oid) bytes
+2025-04-27_09:52:54.25865 	  FROM pg_class
+2025-04-27_09:52:54.25866 	 WHERE relkind = 'r';
+2025-04-27_09:52:54.25866 	
+2025-04-27_09:54:00.53006 LOG:  duration: 1327.658 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_09:54:00.53065 	       relname as relname,
+2025-04-27_09:54:00.53066 	       pg_total_relation_size(oid) bytes
+2025-04-27_09:54:00.53067 	  FROM pg_class
+2025-04-27_09:54:00.53067 	 WHERE relkind = 'r';
+2025-04-27_09:54:00.53067 	
+2025-04-27_10:06:46.28973 LOG:  duration: 1794.594 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_10:06:46.29171 	       relname as relname,
+2025-04-27_10:06:46.29173 	       pg_total_relation_size(oid) bytes
+2025-04-27_10:06:46.29173 	  FROM pg_class
+2025-04-27_10:06:46.29173 	 WHERE relkind = 'r';
+2025-04-27_10:06:46.29173 	
+2025-04-27_10:07:01.03120 LOG:  duration: 1643.913 ms  statement: SELECT relnamespace::regnamespace as schemaname,
+2025-04-27_10:07:01.03357 	       relname as relname,
+2025-04-27_10:07:01.03358 	       pg_total_relation_size(oid) bytes
+2025-04-27_10:07:01.03358 	  FROM pg_class
+2025-04-27_10:07:01.03359 	 WHERE relkind = 'r';
+2025-04-27_10:07:01.03359 	

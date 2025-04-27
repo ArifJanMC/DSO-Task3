@@ -1,0 +1,209 @@
+2025-04-27_09:33:21.79368 [2025-04-27 09:33:21] INFO  WEBrick 1.8.2
+2025-04-27_09:33:21.79388 [2025-04-27 09:33:21] INFO  ruby 3.2.5 (2024-07-26) [x86_64-linux]
+2025-04-27_09:33:21.79463 == Sinatra (v2.2.3) has taken the stage on 9168 for development with backup from WEBrick
+2025-04-27_09:33:21.80192 [2025-04-27 09:33:21] INFO  WEBrick::HTTPServer#start: pid=364 port=9168
+2025-04-27_09:33:28.82887 ::1 - - [27/Apr/2025:09:33:28 UTC] "GET /ruby HTTP/1.1" 200 1091
+2025-04-27_09:33:28.82914 - -> /ruby
+2025-04-27_09:33:29.66870 ::1 - - [27/Apr/2025:09:33:28 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:33:29.66876 - -> /sidekiq
+2025-04-27_09:33:29.97819 ::1 - - [27/Apr/2025:09:33:28 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:33:29.97830 - -> /database
+2025-04-27_09:33:43.29815 ::1 - - [27/Apr/2025:09:33:43 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:33:43.29883 - -> /database
+2025-04-27_09:33:43.68589 ::1 - - [27/Apr/2025:09:33:43 UTC] "GET /ruby HTTP/1.1" 200 1087
+2025-04-27_09:33:43.68619 - -> /ruby
+2025-04-27_09:33:44.03870 ::1 - - [27/Apr/2025:09:33:43 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:33:44.03904 - -> /sidekiq
+2025-04-27_09:33:58.28221 ::1 - - [27/Apr/2025:09:33:58 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:33:58.28249 - -> /database
+2025-04-27_09:33:58.68350 ::1 - - [27/Apr/2025:09:33:58 UTC] "GET /ruby HTTP/1.1" 200 1088
+2025-04-27_09:33:58.68385 - -> /ruby
+2025-04-27_09:33:59.02739 ::1 - - [27/Apr/2025:09:33:58 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:33:59.02775 - -> /sidekiq
+2025-04-27_09:34:13.31545 ::1 - - [27/Apr/2025:09:34:13 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:34:13.31595 - -> /database
+2025-04-27_09:34:13.69067 ::1 - - [27/Apr/2025:09:34:13 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:34:13.69111 - -> /ruby
+2025-04-27_09:34:14.05021 ::1 - - [27/Apr/2025:09:34:13 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:34:14.05069 - -> /sidekiq
+2025-04-27_09:34:28.28561 ::1 - - [27/Apr/2025:09:34:28 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:34:28.28593 - -> /database
+2025-04-27_09:34:28.68589 ::1 - - [27/Apr/2025:09:34:28 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:34:28.68621 - -> /ruby
+2025-04-27_09:34:29.02289 ::1 - - [27/Apr/2025:09:34:28 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:34:29.02321 - -> /sidekiq
+2025-04-27_09:34:43.39234 ::1 - - [27/Apr/2025:09:34:43 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:34:43.39260 - -> /database
+2025-04-27_09:34:43.69706 ::1 - - [27/Apr/2025:09:34:43 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:34:43.69739 - -> /ruby
+2025-04-27_09:34:44.03076 ::1 - - [27/Apr/2025:09:34:43 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:34:44.03114 - -> /sidekiq
+2025-04-27_09:38:41.59148 E, [2025-04-27T09:38:41.591250 #364] ERROR -- : Error connecting to the Redis: Connection lost (EPIPE)
+2025-04-27_09:38:41.94967 ::1 - - [27/Apr/2025:09:38:41 UTC] "GET /sidekiq HTTP/1.1" 200 0
+2025-04-27_09:38:41.95009 - -> /sidekiq
+2025-04-27_09:38:42.25446 ::1 - - [27/Apr/2025:09:38:41 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:38:42.26158 - -> /ruby
+2025-04-27_09:38:43.08979 ::1 - - [27/Apr/2025:09:38:41 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:38:43.10648 - -> /database
+2025-04-27_09:38:43.64529 ::1 - - [27/Apr/2025:09:38:43 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:38:43.64586 - -> /database
+2025-04-27_09:38:43.79203 ::1 - - [27/Apr/2025:09:38:43 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:38:43.79244 - -> /ruby
+2025-04-27_09:38:44.06289 ::1 - - [27/Apr/2025:09:38:43 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:38:44.06325 - -> /sidekiq
+2025-04-27_09:38:58.23788 ::1 - - [27/Apr/2025:09:38:58 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:38:58.23832 - -> /database
+2025-04-27_09:38:58.69358 ::1 - - [27/Apr/2025:09:38:58 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:38:58.69394 - -> /ruby
+2025-04-27_09:38:59.04160 ::1 - - [27/Apr/2025:09:38:58 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:38:59.04210 - -> /sidekiq
+2025-04-27_09:39:13.32962 ::1 - - [27/Apr/2025:09:39:13 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:39:13.33034 - -> /database
+2025-04-27_09:39:13.69001 ::1 - - [27/Apr/2025:09:39:13 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:39:13.69039 - -> /ruby
+2025-04-27_09:39:14.03771 ::1 - - [27/Apr/2025:09:39:13 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:39:14.03817 - -> /sidekiq
+2025-04-27_09:39:28.36329 ::1 - - [27/Apr/2025:09:39:28 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:39:28.36359 - -> /database
+2025-04-27_09:39:28.69425 ::1 - - [27/Apr/2025:09:39:28 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:39:28.69459 - -> /ruby
+2025-04-27_09:39:29.03253 ::1 - - [27/Apr/2025:09:39:28 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:39:29.03285 - -> /sidekiq
+2025-04-27_09:39:46.32577 ::1 - - [27/Apr/2025:09:39:45 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:39:46.32829 - -> /ruby
+2025-04-27_09:39:49.41466 ::1 - - [27/Apr/2025:09:39:47 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:39:49.57975 - -> /sidekiq
+2025-04-27_09:41:31.47545 E, [2025-04-27T09:41:30.828079 #364] ERROR -- : Error connecting to the database: ERROR:  canceling statement due to statement timeout
+2025-04-27_09:41:31.47594 
+2025-04-27_09:41:34.78332 2025-04-27 09:41:34 - PG::QueryCanceled - ERROR:  canceling statement due to statement timeout
+2025-04-27_09:41:34.78396 :
+2025-04-27_09:41:34.78398 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:219:in `exec'
+2025-04-27_09:41:34.78398 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:219:in `block in execute'
+2025-04-27_09:41:34.78400 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/base.rb:59:in `block in with_connection_pool'
+2025-04-27_09:41:34.78401 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/connection_pool-2.2.5/lib/connection_pool.rb:63:in `block (2 levels) in with'
+2025-04-27_09:41:34.78401 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/connection_pool-2.2.5/lib/connection_pool.rb:62:in `handle_interrupt'
+2025-04-27_09:41:34.78401 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/connection_pool-2.2.5/lib/connection_pool.rb:62:in `block in with'
+2025-04-27_09:41:34.78402 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/connection_pool-2.2.5/lib/connection_pool.rb:59:in `handle_interrupt'
+2025-04-27_09:41:34.78402 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/connection_pool-2.2.5/lib/connection_pool.rb:59:in `with'
+2025-04-27_09:41:34.78431 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/base.rb:58:in `with_connection_pool'
+2025-04-27_09:41:34.78431 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:218:in `execute'
+2025-04-27_09:41:34.78432 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:200:in `count_from_query_hash'
+2025-04-27_09:41:34.78432 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:191:in `block in run'
+2025-04-27_09:41:34.78432 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:187:in `each'
+2025-04-27_09:41:34.78432 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:187:in `run'
+2025-04-27_09:41:34.78433 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/database/row_count.rb:249:in `probe_db'
+2025-04-27_09:41:34.78433 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:18:in `block (3 levels) in probe_all'
+2025-04-27_09:41:34.78434 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:17:in `each'
+2025-04-27_09:41:34.78434 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:17:in `block (2 levels) in probe_all'
+2025-04-27_09:41:34.78436 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:15:in `each'
+2025-04-27_09:41:34.78436 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:15:in `block in probe_all'
+2025-04-27_09:41:34.78438 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:14:in `each'
+2025-04-27_09:41:34.78438 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/prober.rb:14:in `probe_all'
+2025-04-27_09:41:34.78438 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/web_exporter.rb:139:in `block (2 levels) in setup_probes'
+2025-04-27_09:41:34.78439 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1697:in `call'
+2025-04-27_09:41:34.78441 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1697:in `block in compile!'
+2025-04-27_09:41:34.78441 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1030:in `block (3 levels) in route!'
+2025-04-27_09:41:34.78442 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1049:in `route_eval'
+2025-04-27_09:41:34.78444 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1030:in `block (2 levels) in route!'
+2025-04-27_09:41:34.78444 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1078:in `block in process_route'
+2025-04-27_09:41:34.78445 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1076:in `catch'
+2025-04-27_09:41:34.78445 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1076:in `process_route'
+2025-04-27_09:41:34.78445 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1028:in `block in route!'
+2025-04-27_09:41:34.78445 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1025:in `each'
+2025-04-27_09:41:34.78446 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1025:in `route!'
+2025-04-27_09:41:34.78447 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1147:in `block in dispatch!'
+2025-04-27_09:41:34.78448 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `block in invoke'
+2025-04-27_09:41:34.78448 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `catch'
+2025-04-27_09:41:34.78448 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `invoke'
+2025-04-27_09:41:34.78450 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1142:in `dispatch!'
+2025-04-27_09:41:34.78450 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:956:in `block in call!'
+2025-04-27_09:41:34.78450 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `block in invoke'
+2025-04-27_09:41:34.78450 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `catch'
+2025-04-27_09:41:34.78451 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1119:in `invoke'
+2025-04-27_09:41:34.78451 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:956:in `call!'
+2025-04-27_09:41:34.78452 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:945:in `call'
+2025-04-27_09:41:34.78452 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/web_exporter.rb:51:in `call'
+2025-04-27_09:41:34.78452 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-2.2.13/lib/rack/logger.rb:17:in `call'
+2025-04-27_09:41:34.78453 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/gitlab-exporter-15.3.0/lib/gitlab_exporter/web_exporter.rb:25:in `call'
+2025-04-27_09:41:34.78453 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/xss_header.rb:18:in `call'
+2025-04-27_09:41:34.78454 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/path_traversal.rb:16:in `call'
+2025-04-27_09:41:34.78454 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/json_csrf.rb:26:in `call'
+2025-04-27_09:41:34.78454 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/base.rb:50:in `call'
+2025-04-27_09:41:34.78455 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/base.rb:50:in `call'
+2025-04-27_09:41:34.78456 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-protection-2.2.4/lib/rack/protection/frame_options.rb:31:in `call'
+2025-04-27_09:41:34.78456 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-2.2.13/lib/rack/null_logger.rb:11:in `call'
+2025-04-27_09:41:34.78456 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-2.2.13/lib/rack/head.rb:12:in `call'
+2025-04-27_09:41:34.78457 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/show_exceptions.rb:22:in `call'
+2025-04-27_09:41:34.78457 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:218:in `call'
+2025-04-27_09:41:34.78457 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:2004:in `call'
+2025-04-27_09:41:34.78457 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1564:in `block in call'
+2025-04-27_09:41:34.78458 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1780:in `synchronize'
+2025-04-27_09:41:34.78458 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/sinatra-2.2.4/lib/sinatra/base.rb:1564:in `call'
+2025-04-27_09:41:34.78458 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/rack-2.2.13/lib/rack/handler/webrick.rb:95:in `service'
+2025-04-27_09:41:34.78459 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/webrick-1.8.2/lib/webrick/httpserver.rb:140:in `service'
+2025-04-27_09:41:34.78460 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/webrick-1.8.2/lib/webrick/httpserver.rb:96:in `run'
+2025-04-27_09:41:34.78460 	/opt/gitlab/embedded/lib/ruby/gems/3.2.0/gems/webrick-1.8.2/lib/webrick/server.rb:310:in `block in start_thread'
+2025-04-27_09:52:51.67798 ::1 - - [27/Apr/2025:09:39:43 UTC] "GET /database HTTP/1.1" 500 0
+2025-04-27_09:52:51.67822 - -> /database
+2025-04-27_09:52:52.92167 E, [2025-04-27T09:52:52.884642 #364] ERROR -- : Error connecting to the Redis: Connection lost (EPIPE)
+2025-04-27_09:52:53.31082 127.0.0.1 - - [27/Apr/2025:09:52:52 UTC] "GET /sidekiq HTTP/1.1" 200 0
+2025-04-27_09:52:53.31125 - -> /sidekiq
+2025-04-27_09:52:53.51519 ::1 - - [27/Apr/2025:09:52:53 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:52:53.51558 - -> /ruby
+2025-04-27_09:52:53.87602 ::1 - - [27/Apr/2025:09:52:53 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:52:53.87736 - -> /database
+2025-04-27_09:52:58.24474 ::1 - - [27/Apr/2025:09:52:58 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:52:58.24517 - -> /database
+2025-04-27_09:52:58.67990 ::1 - - [27/Apr/2025:09:52:58 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:52:58.68576 - -> /ruby
+2025-04-27_09:52:59.04357 127.0.0.1 - - [27/Apr/2025:09:52:58 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:52:59.04393 - -> /sidekiq
+2025-04-27_09:53:13.24901 ::1 - - [27/Apr/2025:09:53:13 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:53:13.24983 - -> /database
+2025-04-27_09:53:13.67977 ::1 - - [27/Apr/2025:09:53:13 UTC] "GET /ruby HTTP/1.1" 200 1089
+2025-04-27_09:53:13.68014 - -> /ruby
+2025-04-27_09:53:14.04284 127.0.0.1 - - [27/Apr/2025:09:53:13 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:53:14.04348 - -> /sidekiq
+2025-04-27_09:53:28.23848 ::1 - - [27/Apr/2025:09:53:28 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:53:28.23903 - -> /database
+2025-04-27_09:53:28.70666 ::1 - - [27/Apr/2025:09:53:28 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_09:53:28.70698 - -> /ruby
+2025-04-27_09:53:29.05367 127.0.0.1 - - [27/Apr/2025:09:53:28 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:53:29.05423 - -> /sidekiq
+2025-04-27_09:53:43.30556 ::1 - - [27/Apr/2025:09:53:43 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:53:43.30586 - -> /database
+2025-04-27_09:53:43.70655 ::1 - - [27/Apr/2025:09:53:43 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_09:53:43.70693 - -> /ruby
+2025-04-27_09:53:44.04711 127.0.0.1 - - [27/Apr/2025:09:53:43 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:53:44.04970 - -> /sidekiq
+2025-04-27_09:53:58.37562 ::1 - - [27/Apr/2025:09:53:58 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_09:53:58.37597 - -> /database
+2025-04-27_09:53:58.71471 ::1 - - [27/Apr/2025:09:53:58 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_09:53:58.71506 - -> /ruby
+2025-04-27_09:53:59.02617 127.0.0.1 - - [27/Apr/2025:09:53:58 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_09:53:59.02671 - -> /sidekiq
+2025-04-27_10:06:14.95035 E, [2025-04-27T10:06:14.942896 #364] ERROR -- : Error connecting to the Redis: Connection lost (EPIPE)
+2025-04-27_10:06:15.32872 127.0.0.1 - - [27/Apr/2025:10:06:14 UTC] "GET /sidekiq HTTP/1.1" 200 0
+2025-04-27_10:06:15.32911 - -> /sidekiq
+2025-04-27_10:06:15.51920 ::1 - - [27/Apr/2025:10:06:15 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_10:06:15.52016 - -> /ruby
+2025-04-27_10:06:16.00274 ::1 - - [27/Apr/2025:10:06:14 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_10:06:16.00311 - -> /database
+2025-04-27_10:06:28.24590 ::1 - - [27/Apr/2025:10:06:28 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_10:06:28.24643 - -> /database
+2025-04-27_10:06:28.69015 ::1 - - [27/Apr/2025:10:06:28 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_10:06:28.69052 - -> /ruby
+2025-04-27_10:06:29.04219 127.0.0.1 - - [27/Apr/2025:10:06:28 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_10:06:29.04260 - -> /sidekiq
+2025-04-27_10:06:43.74689 ::1 - - [27/Apr/2025:10:06:43 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_10:06:43.74735 - -> /database
+2025-04-27_10:06:43.93359 ::1 - - [27/Apr/2025:10:06:43 UTC] "GET /ruby HTTP/1.1" 200 1090
+2025-04-27_10:06:43.93397 - -> /ruby
+2025-04-27_10:06:44.15931 127.0.0.1 - - [27/Apr/2025:10:06:43 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_10:06:44.16189 - -> /sidekiq
+2025-04-27_10:06:58.99787 ::1 - - [27/Apr/2025:10:06:58 UTC] "GET /ruby HTTP/1.1" 200 1094
+2025-04-27_10:06:58.99857 - -> /ruby
+2025-04-27_10:06:59.01460 ::1 - - [27/Apr/2025:10:06:58 UTC] "GET /database HTTP/1.1" 200 1778
+2025-04-27_10:06:59.01491 - -> /database
+2025-04-27_10:06:59.15392 127.0.0.1 - - [27/Apr/2025:10:06:58 UTC] "GET /sidekiq HTTP/1.1" 200 505
+2025-04-27_10:06:59.15426 - -> /sidekiq

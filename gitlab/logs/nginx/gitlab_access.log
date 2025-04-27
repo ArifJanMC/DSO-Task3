@@ -1,0 +1,121 @@
+172.19.0.2 - - [27/Apr/2025:08:37:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.19.0.2 - - [27/Apr/2025:08:37:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.19.0.2 - - [27/Apr/2025:08:37:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.19.0.2 - - [27/Apr/2025:08:37:56 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.19.0.2 - - [27/Apr/2025:08:37:56 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:40:18 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:40:18 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:40:19 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:40:19 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:40:20 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:08:40:26 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:08:42:32 +0000] "GET /help HTTP/1.1" 499 0 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:08:42:54 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:42:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:42:56 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:42:57 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:42:59 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:08:43:04 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+104.234.115.191 - - [27/Apr/2025:08:44:33 +0000] "GET / HTTP/1.0" 301 162 "" "'Mozilla/5.0 (compatible; GenomeCrawlerd/1.0; +https://www.nokia.com/genomecrawler)'" -
+104.234.115.191 - - [27/Apr/2025:08:44:44 +0000] "-  -" 400 150 "" "-" -
+104.234.115.191 - - [27/Apr/2025:08:44:45 +0000] "GET / HTTP/1.1" 301 162 "" "'Mozilla/5.0 (compatible; GenomeCrawlerd/1.0; +https://www.nokia.com/genomecrawler)'" -
+172.20.0.2 - - [27/Apr/2025:08:44:52 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:44:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:44:57 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:44:58 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:08:44:59 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:08:46:15 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+8.211.51.119 - - [27/Apr/2025:08:46:44 +0000] "GET / HTTP/1.1" 301 162 "" "curl/7.64.1" -
+154.81.156.7 - - [27/Apr/2025:08:46:54 +0000] "GET / HTTP/1.1" 301 162 "" "-" -
+111.7.106.107 - - [27/Apr/2025:08:47:09 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -
+123.160.223.73 - - [27/Apr/2025:08:47:09 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -
+123.160.223.75 - - [27/Apr/2025:08:47:19 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -
+111.7.96.157 - - [27/Apr/2025:08:47:19 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -
+79.127.221.66 - - [27/Apr/2025:08:47:24 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36" -
+123.160.221.130 - - [27/Apr/2025:08:47:27 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" -
+127.0.0.1 - - [27/Apr/2025:08:47:55 +0000] "GET /help HTTP/1.1" 499 0 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:09:36 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:09:36 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:09:37 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:37 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:37 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:38 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:38 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:50 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:50 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:50 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:51 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:09:52 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:14:53 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:14:53 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:14:53 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:14:53 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:14:53 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:14:54 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:14:54 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:14:55 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:16:59 +0000] "GET /help HTTP/1.1" 499 0 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:17:15 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:17:17 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:17:18 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:17:20 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:17:27 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:18:47 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+167.71.229.198 - - [27/Apr/2025:09:22:41 +0000] "GET /aaa9 HTTP/1.1" 400 248 "" "Mozilla/5.0 zgrab/0.x" -
+167.71.229.198 - - [27/Apr/2025:09:25:30 +0000] "GET /aab8 HTTP/1.1" 400 248 "" "Mozilla/5.0 zgrab/0.x" -
+167.71.229.198 - - [27/Apr/2025:09:29:05 +0000] "GET / HTTP/1.1" 400 248 "" "Mozilla/5.0 zgrab/0.x" -
+127.0.0.1 - - [27/Apr/2025:09:32:32 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:32:32 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:32:32 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:32:32 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 2026 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:32:33 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 2026 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:32:34 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 2026 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:21 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:21 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:21 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:21 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:22 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:41 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:42 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:42 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:42 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:33:43 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:33:46 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:34:18 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:34:18 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:34:19 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:34:19 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:34:20 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:34:47 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:38:40 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:38:40 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:38:40 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:38:41 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:38:41 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:38:41 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:38:42 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:39:11 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+103.130.166.147 - - [27/Apr/2025:09:40:07 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7" -
+154.81.156.35 - - [27/Apr/2025:09:42:20 +0000] "GET / HTTP/1.1" 301 162 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36 Edg/90.0.818.46" -
+141.98.11.244 - - [27/Apr/2025:09:43:30 +0000] "GET / HTTP/1.1" 301 162 "" "-" -
+184.105.247.215 - - [27/Apr/2025:09:47:10 +0000] "-  -" 400 150 "" "-" -
+127.0.0.1 - - [27/Apr/2025:09:52:50 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:52:51 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:52:51 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:52:51 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:52:51 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:09:52:51 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:09:52:51 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:52:52 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:09:52:52 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:09:53:49 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+154.81.156.7 - - [27/Apr/2025:09:59:20 +0000] "GET / HTTP/1.1" 301 162 "" "-" -
+172.20.0.2 - - [27/Apr/2025:10:06:13 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:10:06:14 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:10:06:14 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+127.0.0.1 - - [27/Apr/2025:10:06:14 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:10:06:14 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:10:06:14 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+127.0.0.1 - - [27/Apr/2025:10:06:14 +0000] "GET /help HTTP/1.1" 502 2026 "" "curl/8.13.0-DEV" -
+172.20.0.2 - - [27/Apr/2025:10:06:14 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
+172.20.0.2 - - [27/Apr/2025:10:06:15 +0000] "GET /api/v4/internal/kubernetes/receptive_agents HTTP/2.0" 502 24 "" "gitlab-kas/v17.11.1/v17.11.1" -
