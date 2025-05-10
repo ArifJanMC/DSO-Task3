@@ -1,21 +1,17 @@
-2025-04-27_09:33:21.02163 {"time":"2025-04-27T09:33:21.011556222Z","level":"INFO","msg":"Running KAS","kas":"gitlab-kas/v17.11.1/v17.11.1"}
-2025-04-27_09:33:21.04534 {"time":"2025-04-27T09:33:21.044676547Z","level":"INFO","msg":"Using own private API multi URL","url":"grpc:/localhost/|8155"}
-2025-04-27_09:33:21.05150 {"time":"2025-04-27T09:33:21.051456308Z","level":"INFO","msg":"AutoFlow module is not enabled in config","mod_name":"autoflow"}
-2025-04-27_09:33:21.06157 {"time":"2025-04-27T09:33:21.061521087Z","level":"INFO","msg":"AutoFlow module is not enabled in config, not starting codec server","mod_name":"autoflow_codec_server"}
-2025-04-27_09:33:21.06287 {"time":"2025-04-27T09:33:21.062856571Z","level":"INFO","msg":"Starting","mod_name":"kubernetes_api"}
-2025-04-27_09:33:21.06527 {"time":"2025-04-27T09:33:21.065039744Z","level":"INFO","msg":"Starting","mod_name":"event_tracker"}
-2025-04-27_09:33:21.06528 {"time":"2025-04-27T09:33:21.065069279Z","level":"INFO","msg":"Starting","mod_name":"notifications"}
-2025-04-27_09:33:21.06592 {"time":"2025-04-27T09:33:21.065683893Z","level":"INFO","msg":"Starting","mod_name":"observability"}
-2025-04-27_09:33:21.06593 {"time":"2025-04-27T09:33:21.065703027Z","level":"INFO","msg":"Starting","mod_name":"usage_metrics"}
-2025-04-27_09:33:21.06696 {"time":"2025-04-27T09:33:21.066857264Z","level":"INFO","msg":"Starting","mod_name":"kas2agentk_tunnel"}
-2025-04-27_09:33:21.06904 {"time":"2025-04-27T09:33:21.0690245Z","level":"INFO","msg":"Private API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8155"}
-2025-04-27_09:33:21.06978 {"time":"2025-04-27T09:33:21.069524379Z","level":"INFO","msg":"Kubernetes API endpoint is up","mod_name":"kubernetes_api","net_network":"tcp","net_address":"127.0.0.1:8154"}
-2025-04-27_09:33:21.06979 {"time":"2025-04-27T09:33:21.069662032Z","level":"INFO","msg":"Observability endpoint is up","mod_name":"observability","net_network":"tcp","net_address":"127.0.0.1:8151"}
-2025-04-27_09:33:21.07149 {"time":"2025-04-27T09:33:21.070316532Z","level":"INFO","msg":"Agentk API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8150","is_websocket":true}
-2025-04-27_09:33:21.07150 {"time":"2025-04-27T09:33:21.070393918Z","level":"INFO","msg":"API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8153"}
-2025-04-27_09:33:22.65481 {"time":"2025-04-27T09:33:22.654732907Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
-2025-04-27_09:33:43.42879 {"time":"2025-04-27T09:33:43.428614679Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
-2025-04-27_09:34:20.36482 {"time":"2025-04-27T09:34:20.364665821Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
-2025-04-27_09:38:42.46180 {"time":"2025-04-27T09:38:42.457335241Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
-2025-04-27_09:52:52.92425 {"time":"2025-04-27T09:52:52.923997166Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
-2025-04-27_10:06:15.63409 {"time":"2025-04-27T10:06:15.633733078Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
+2025-05-10_01:02:19.85748 {"time":"2025-05-10T01:02:19.857398307Z","level":"INFO","msg":"Running KAS","kas":"gitlab-kas/v17.11.2/v17.11.2"}
+2025-05-10_01:02:19.87652 {"time":"2025-05-10T01:02:19.875387529Z","level":"INFO","msg":"Using own private API multi URL","url":"grpc:/localhost/|8155"}
+2025-05-10_01:02:19.87716 {"time":"2025-05-10T01:02:19.877136379Z","level":"INFO","msg":"AutoFlow module is not enabled in config","mod_name":"autoflow"}
+2025-05-10_01:02:19.87722 {"time":"2025-05-10T01:02:19.877210174Z","level":"INFO","msg":"AutoFlow module is not enabled in config, not starting codec server","mod_name":"autoflow_codec_server"}
+2025-05-10_01:02:19.87740 {"time":"2025-05-10T01:02:19.87738114Z","level":"INFO","msg":"Starting","mod_name":"kubernetes_api"}
+2025-05-10_01:02:19.87774 {"time":"2025-05-10T01:02:19.87751138Z","level":"INFO","msg":"Starting","mod_name":"event_tracker"}
+2025-05-10_01:02:19.87775 {"time":"2025-05-10T01:02:19.877496289Z","level":"INFO","msg":"Starting","mod_name":"observability"}
+2025-05-10_01:02:19.87775 {"time":"2025-05-10T01:02:19.877525932Z","level":"INFO","msg":"Starting","mod_name":"notifications"}
+2025-05-10_01:02:19.87776 {"time":"2025-05-10T01:02:19.877542237Z","level":"INFO","msg":"Starting","mod_name":"usage_metrics"}
+2025-05-10_01:02:19.87776 {"time":"2025-05-10T01:02:19.877579776Z","level":"INFO","msg":"Starting","mod_name":"kas2agentk_tunnel"}
+2025-05-10_01:02:19.87813 {"time":"2025-05-10T01:02:19.878106745Z","level":"INFO","msg":"Observability endpoint is up","mod_name":"observability","net_network":"tcp","net_address":"127.0.0.1:8151"}
+2025-05-10_01:02:19.87839 {"time":"2025-05-10T01:02:19.878271971Z","level":"INFO","msg":"Kubernetes API endpoint is up","mod_name":"kubernetes_api","net_network":"tcp","net_address":"127.0.0.1:8154"}
+2025-05-10_01:02:19.87841 {"time":"2025-05-10T01:02:19.878356922Z","level":"INFO","msg":"Private API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8155"}
+2025-05-10_01:02:19.87843 {"time":"2025-05-10T01:02:19.878381564Z","level":"INFO","msg":"Agentk API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8150","is_websocket":true}
+2025-05-10_01:02:19.87879 {"time":"2025-05-10T01:02:19.878751868Z","level":"INFO","msg":"API endpoint is up","net_network":"tcp","net_address":"127.0.0.1:8153"}
+2025-05-10_01:02:21.40816 {"time":"2025-05-10T01:02:21.408053429Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}
+2025-05-10_01:02:42.51497 {"time":"2025-05-10T01:02:42.514889876Z","level":"ERROR","msg":"Failed to get receptive agents","mod_name":"kas2agentk_tunnel","error":"HTTP status code: 502 for path /api/v4/internal/kubernetes/receptive_agents"}

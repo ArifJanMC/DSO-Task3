@@ -41,7 +41,7 @@ bind 'tcp://127.0.0.1:8080'
 
 directory '/var/opt/gitlab/gitlab-rails/working'
 
-workers 2
+workers 8
 
 require "/opt/gitlab/embedded/service/gitlab-rails/lib/gitlab/cluster/lifecycle_events"
 
@@ -50,7 +50,7 @@ on_restart do
   Gitlab::Cluster::LifecycleEvents.do_before_master_restart
 end
 
-options = { workers: 2 }
+options = { workers: 8 }
 
 before_fork do
   # Signal application hooks that we're about to fork
